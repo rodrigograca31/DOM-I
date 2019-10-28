@@ -99,3 +99,32 @@ newLink.innerText = "Random"
 nav.appendChild(newLink);
 newLink2.innerText = "Stuff"
 nav.prepend(newLink2);
+
+document.querySelectorAll("nav a")[0].style.color = "green";
+document.querySelectorAll("nav a")[7].style.color = "green";
+
+document.body.style.color = "#0F0"
+document.body.style.backgroundColor = "#000"
+
+const button = document.querySelector("button").addEventListener('click', (event) => {
+	console.log(event);
+	const rand = Math.floor(Math.random() * 100);
+	event.srcElement.parentElement.querySelector("h1").innerText = rand;
+
+	// Easter Egg :)
+	if (rand === 42 || rand === 31) {
+		setInterval(() => {
+			document.body.style.backgroundColor = getRandomColor();
+		}, 100);
+	}
+});
+
+
+getRandomColor = () => {
+	var letters = '0123456789ABCDEF';
+	var color = '#';
+	for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+}
