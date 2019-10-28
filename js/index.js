@@ -85,3 +85,17 @@ contact[0].children[3].innerText = siteContent.contact["email"];
 
 const footer = document.getElementsByTagName("footer");
 footer[0].getElementsByTagName("p")[0].innerText = siteContent.footer.copyright;
+
+const navA = document.querySelectorAll("nav a");
+navA.forEach((item) => {
+	item.style.color = "green";
+})
+
+const nav = document.querySelector("nav");
+const newLink = document.createElement("a");
+const newLink2 = document.createElement("a");
+
+newLink.innerText = "Random"
+nav.appendChild(newLink);
+newLink2.innerText = "Stuff"
+nav.prepend(newLink2);
