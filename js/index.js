@@ -47,3 +47,41 @@ cta.setAttribute('src', siteContent["cta"]["img-src"])
 
 const middle = document.getElementById("middle-img");
 middle.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+// Task 2:
+for (let i = 0; i < 6; i++) {
+	const link = document.querySelectorAll("a")[i];
+	link.innerText = siteContent.nav["nav-item-" + (i + 1)];
+}
+
+// easier way:
+// document.querySelector(".cta-text h1").innerText = siteContent.cta.h1;
+
+const h1 = document.querySelector(".cta-text h1");
+h1.innerText = siteContent.cta.h1;
+
+const btn = document.getElementsByTagName("button");
+btn[0].innerText = siteContent.cta.button;
+
+const faH4 = document.querySelectorAll(".text-content h4");
+faH4[0].innerText = siteContent["main-content"]["features-h4"];
+faH4[1].innerText = siteContent["main-content"]["about-h4"];
+faH4[2].innerText = siteContent["main-content"]["services-h4"];
+faH4[3].innerText = siteContent["main-content"]["product-h4"];
+faH4[4].innerText = siteContent["main-content"]["vision-h4"];
+
+const faContent = document.querySelectorAll(".text-content p");
+faContent[0].innerText = siteContent["main-content"]["features-content"];
+faContent[1].innerText = siteContent["main-content"]["about-content"];
+faContent[2].innerText = siteContent["main-content"]["services-content"];
+faContent[3].innerText = siteContent["main-content"]["product-content"];
+faContent[4].innerText = siteContent["main-content"]["vision-content"];
+
+const contact = document.getElementsByClassName("contact");
+contact[0].children[0].innerText = siteContent.contact["contact-h4"];
+contact[0].children[1].innerText = siteContent.contact["address"];
+contact[0].children[2].innerText = siteContent.contact["phone"];
+contact[0].children[3].innerText = siteContent.contact["email"];
+
+const footer = document.getElementsByTagName("footer");
+footer[0].getElementsByTagName("p")[0].innerText = siteContent.footer.copyright;
